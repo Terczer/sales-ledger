@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Generator ewidencji sprzedaży</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <div class="brand-mark" aria-hidden="true">ES</div>
+        <p class="eyebrow">Narzędzie do rozliczeń</p>
+        <h1>Generator ewidencji sprzedaży</h1>
+        <p class="intro-copy">
+          Wybierz plik transakcji z folderu <code>dane</code>. Uzupełnimy stały szablon
+          z folderu <code>template</code> i zapiszemy gotowy plik w folderze <code>exports</code>.
+        </p>
+      </header>
+
+      <section class="panel" aria-labelledby="upload-title">
+        <div class="panel-heading">
+          <div>
+            <p class="step-label">Jeden krok</p>
+            <h2 id="upload-title">Wybierz zestaw transakcji</h2>
+          </div>
+          <button id="refresh-button" class="refresh-button" type="button">Odśwież listę</button>
+        </div>
+
+        <form id="upload-form">
+          <label class="select-label" for="source-file">Plik źródłowy</label>
+          <select id="source-file" name="filename" required disabled>
+            <option value="">Wczytywanie plików…</option>
+          </select>
+          <p class="privacy-note">Lista zawiera pliki <code>transakcje &lt;data&gt;.xlsx</code> z folderu <code>dane</code>.</p>
+          <button id="submit-button" type="submit">Utwórz ewidencję <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+        <div id="results" class="results" aria-live="polite"></div>
+      </section>
+
+      <footer>
+        Szablon ewidencji jest pobierany z folderu <code>template</code>. Jeśli pliki zawierają
+        transakcje z różnych miesięcy, powstanie osobny eksport dla każdego miesiąca.
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

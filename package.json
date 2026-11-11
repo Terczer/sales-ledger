@@ -1,0 +1,19 @@
+{
+  "name": "sales_ledger",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Jakub Terczyński",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
